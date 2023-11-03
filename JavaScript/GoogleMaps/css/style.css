@@ -1,0 +1,111 @@
+.map {
+    height: 23vw;
+    border-radius: 8px;
+    border: 1px solid #35bb69;
+  }
+
+    .gm-ui-hover-effect {
+        display: none !important;
+    }
+  .endereco-mapa .endereco-mapa-container button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    -webkit-appearance: none;
+  }
+
+  .endereco-mapa .endereco-mapa-container .form-group.sucesso span {
+    display: none;
+  }
+
+  .endereco-mapa .endereco-mapa-container .form-group button {
+    display: none;
+  }
+
+  .endereco-mapa .endereco-mapa-container .form-group.sucesso button {
+    display: block;
+  }
+.ssQIHO-checkbox-menu-item>span>span {
+    background-color: #35bb69 !important;
+    display: inline-block;
+}
+  .endereco-mapa .endereco-mapa-container .box-pesquisa {
+    position: relative;
+  }
+
+  .endereco-mapa .endereco-mapa-container .box-pesquisa span {
+    position: absolute;
+    right: 13px;
+    top: 7px;
+    font-size: 23px;
+    color: #ced4da;
+    background: #fff;
+    padding: 0px 1px 0px 5px;
+  }
+
+  .endereco-mapa .endereco-mapa-container .box-pesquisa button {
+    position: absolute;
+    right: 13px;
+    top: 5px;
+    font-size: 23px;
+    color: #ced4da;
+    background: #fff;
+    padding: 0px 1px 0px 5px;
+  }
+
+  .endereco-mapa .endereco-mapa-container .form-group {
+    margin-bottom: 0px;
+  }
+
+  .endereco-mapa .endereco-mapa-container {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    background: #fff;
+    opacity: 0.95;
+    border-radius: 10px;
+    padding: 20px 10px 20px 10px;
+    margin: 20px 0px 0px 20px;
+    -webkit-box-shadow: 0 2px 4px #0c25362b;
+    -moz-box-shadow: 0 2px 4px #0c25362b;
+    box-shadow: 0 2px 4px #0c25362b;
+  }
+
+  .endereco-input {
+    font-size: 14px;
+    width: 42vw;
+  }
+
+  .infowindow-content {
+    background: #fff;
+    padding: 25px 10px 12px 10px;
+    border-radius: 7px;
+    color: #1e703d;
+    font-size: 12px;
+  }
+
+  #place-name {
+    font-weight: 500 !important;
+  }
+
+  #place-address {
+    font-weight: 400;
+  }
+
+  .gm-style-iw-d .infowindow-content.endereco-selecionado::after {
+    z-index: 1;
+    font-weight: 500;
+    content: 'Endereço selecionado';
+    background: #35bb69;
+    color: #fff !important;
+    border-radius: 3px;
+    position: absolute !important;
+    padding: 3px 5px 3px 5px;
+    left: 20px;
+    top: 7px;
+    -webkit-box-shadow: 0 2px 4px #0c25362b;
+    -moz-box-shadow: 0 2px 4px #0c25362b;
+    box-shadow: 0 2px 4px #0c25362b;
+  }
