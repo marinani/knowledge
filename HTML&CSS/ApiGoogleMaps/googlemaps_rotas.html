@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa do Google com Rotas</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dY0Sm4XrNlu-3axgS3qjv4sWQC3JqkY"></script>
+    <script>
+        var map;
+        var directionsService;
+        var directionsDisplay;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                 center: {lat: -25.4140, lng: -49.2494}, // Coordenadas do centro do mapa
+                zoom: 15
+            });
+            directionsService = new google.maps.DirectionsService();
+            directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+
+            // Array de coordenadas
+            var locations = [
+                    {lat: -25.4140, lng: -49.2494, title: 'ICI'},
+                {lat: -25.4105, lng: -49.2543, title: 'MC Donalds'},
+				{lat: -25.4187, lng: -49.2686, title: 'Centro Civico'},
+                // Adicione outras coordenadas conforme necessário
+            ];
+
+            // Define o ponto de partida como a primeira coordenada
+            var start = locations[0];
+            // Remove o ponto de partida do array de coordenadas
+            locations.shift();
+
+            calculateAndDisplayRoute(start, locations);
+        }
+
+        function calculateAndDisplayRoute(start, waypoints) {
+            var waypts = [];
+            for (var i = 0; i < waypoints.length; i++) {
+                waypts.push({
+                    location: waypoints[i],
+                    stopover: true
+                });
+            }
+
+            directionsService.route({
+                origin: start,
+                destination: waypoints[waypoints.length - 1],
+                waypoints: waypts,
+                travelMode: 'DRIVING'
+            }, function(response, status) {
+                if (status === 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Erro ao calcular a rota: ' + status);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="map" style="height: 400px;"></div>
+    <script>
+        initMap();
+    </script>
+</body>
+</html>

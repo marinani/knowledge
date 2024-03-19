@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapa do Google</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dY0Sm4XrNlu-3axgS3qjv4sWQC3JqkY"></script>
+    <script>
+        function initMap() {
+            // Crie um novo mapa
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -25.4140, lng: -49.2494}, // Coordenadas do centro do mapa
+                zoom: 15 // Zoom inicial
+            });
+
+//-25.41401698149449, -49.249473001277124
+//-25.41054769323142, -49.25432243488119
+//-25.41877701801256, -49.26865413608186
+            // Adicione marcadores
+            var locations = [
+                {lat: -25.4140, lng: -49.2494, title: 'ICI'},
+                {lat: -25.4105, lng: -49.2543, title: 'MC Donalds'},
+				{lat: -25.4187, lng: -49.2686, title: 'Centro Civico'},
+                // Adicione outras coordenadas conforme necessário
+            ];
+
+            locations.forEach(function(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map,
+                    title: location.title
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="map" style="height: 400px;"></div> <!-- Div onde o mapa será exibido -->
+    <script>
+        // Inicialize o mapa quando a página for carregada
+        initMap();
+    </script>
+</body>
+</html>
